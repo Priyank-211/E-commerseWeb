@@ -12,3 +12,9 @@ body {
 .prata-regular {
   font-family: 'Prata', serif;
 }
+@media (max-width: 640px) {
+  a.active {
+    background-color: black;
+    color: white;
+  }
+}

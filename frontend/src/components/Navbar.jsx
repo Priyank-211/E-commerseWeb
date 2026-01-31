@@ -1,12 +1,14 @@
-import { assets } from "../assets/assets.js";
-import { Link, NavLink } from "react-router-dom";
-import { useState } from "react";
+import { assets } from '../assets/assets.js';
+import { Link, NavLink } from 'react-router-dom';
+import { useState } from 'react';
 
 const Navbar = () => {
   const [visible, setvisible] = useState(false);
   return (
     <div className="flex items-center justify-between py-5 font-medium">
-      <img className="w-36" src={assets.logo} alt="" />
+      <Link to="/">
+        <img className="w-36" src={assets.logo} alt="" />
+      </Link>
       <ul className="hidden sm:flex gap-5 text-sm text-gray-700">
         <NavLink to="/" className="flex flex-col items-center gap-1">
           <p>Home</p>
@@ -57,7 +59,7 @@ const Navbar = () => {
       {/* sidebar menu for small screen */}
       <div
         className={`absolute top-0 right-0 bottom-0 overflow-hidden bg-white transition-all ${
-          visible ? "w-full" : "w-0"
+          visible ? 'w-full' : 'w-0'
         }`}
       >
         <div className="flex flex-col text-gray-600">
