@@ -10,6 +10,7 @@ import Cart from './pages/Cart';
 import Order from './pages/Order';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Collection from './pages/Collection';
 
 const App = () => {
   return (
@@ -21,7 +22,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
-
+          <Route path="/collection" element={<Collection />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="product" element={<Product />} />
           <Route path="/cart" element={<Cart />} />
