@@ -11,6 +11,7 @@ import Order from './pages/Order';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Collection from './pages/Collection';
+import SearchBar from './components/SearchBar';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
       <h1></h1>
       <div className="px-4 sm:[5vh] md:px-[7vw] lg:px-[9vw]">
         <Navbar />
+        <SearchBar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
