@@ -12,12 +12,15 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Collection from './pages/Collection';
 import SearchBar from './components/SearchBar';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 const App = () => {
   return (
     <>
       <h1></h1>
       <div className="px-4 sm:[5vh] md:px-[7vw] lg:px-[9vw]">
+        <ToastContainer />
         <Navbar />
         <SearchBar />
         <Routes>
