@@ -30,9 +30,16 @@ const ShopContextProvider = (props) => {
     }
     setCartItems(cartData);
   };
-  useEffect(() => {
-    console.log(cartItems);
-  }, [cartItems]);
+
+  const GetCartCount = () => {
+    let count = 0;
+    for (let item in cartItems) {
+      for (let size in cartItems[item]) {
+        count += cartItems[item][size];
+      }
+    }
+    return count;
+  };
 
   const value = {
     products,
@@ -44,6 +51,7 @@ const ShopContextProvider = (props) => {
     setShowSearch,
     cartItems,
     Addtocart,
+    GetCartCount,
   };
   return (
     <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>
