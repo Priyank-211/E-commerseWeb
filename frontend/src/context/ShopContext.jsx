@@ -41,6 +41,13 @@ const ShopContextProvider = (props) => {
     return count;
   };
 
+  const updateQuantity = (itemId, size, quantity) => {
+    console.log('delete is clicked');
+    let cartData = structuredClone(cartItems);
+    cartData[itemId][size] = quantity;
+    setCartItems(cartData);
+  };
+
   const value = {
     products,
     currrency,
@@ -52,6 +59,7 @@ const ShopContextProvider = (props) => {
     cartItems,
     Addtocart,
     GetCartCount,
+    updateQuantity,
   };
   return (
     <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>
