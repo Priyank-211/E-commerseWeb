@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from 'react';
 import { ShopContext } from '../context/ShopContext';
 import Title from '../components/Title.jsx';
 import { assets } from '../assets/assets.js';
+import CartTotal from '../components/CartTotal.jsx';
 
 const Cart = () => {
   const { products, cartItems, currency, updateQuantity } =
@@ -62,6 +63,9 @@ const Cart = () => {
                 </div>
               </div>
               <input
+                onChange={(e) =>
+                  updateQuantity(item._id, item.size, parseInt(e.target.value))
+                }
                 type="number"
                 min={1}
                 defaultValue={item.quantity}
@@ -76,6 +80,11 @@ const Cart = () => {
             </div>
           );
         })}
+      </div>
+      <div className="flex justify-end my-20">
+        <div className="w-full sm:w-[450px]">
+          <CartTotal />
+        </div>
       </div>
     </div>
   );

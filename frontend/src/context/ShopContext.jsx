@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 export const ShopContext = createContext();
 
 const ShopContextProvider = (props) => {
-  const currrency = '$';
+  const currency = '$';
   const delivery_Fee = 10;
   const [search, setSearch] = useState('');
   const [showSearch, setShowSearch] = useState(true);
@@ -30,7 +30,20 @@ const ShopContextProvider = (props) => {
     }
     setCartItems(cartData);
   };
-
+  const GetCartAmount = () => {
+    let totalAmount = 0;
+    for (let items in cartItems) {
+      let itemInfo = products.find((product) => product._id === items);
+      for (let item in cartItems[items]) {
+        try {
+          if (cartItems[items][item] > 0) {
+            totalAmount += cartItems[items][item] * itemInfo.price;
+          }
+        } catch (error) {}
+      }
+    }
+    return totalAmount;
+  };
   const GetCartCount = () => {
     let count = 0;
     for (let item in cartItems) {
@@ -42,7 +55,6 @@ const ShopContextProvider = (props) => {
   };
 
   const updateQuantity = (itemId, size, quantity) => {
-    console.log('delete is clicked');
     let cartData = structuredClone(cartItems);
     cartData[itemId][size] = quantity;
     setCartItems(cartData);
@@ -50,7 +62,7 @@ const ShopContextProvider = (props) => {
 
   const value = {
     products,
-    currrency,
+    currency,
     delivery_Fee,
     search,
     setSearch,
@@ -60,6 +72,7 @@ const ShopContextProvider = (props) => {
     Addtocart,
     GetCartCount,
     updateQuantity,
+    GetCartAmount,
   };
   return (
     <ShopContext.Provider value={value}>{props.children}</ShopContext.Provider>
