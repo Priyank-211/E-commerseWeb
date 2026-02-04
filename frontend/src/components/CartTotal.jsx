@@ -15,7 +15,7 @@ const CartTotal = () => {
           <p>Subtotal</p>
           <p>
             {currency}
-            {GetCartAmount()}
+            {GetCartAmount()}.00
           </p>
         </div>
         <hr />
@@ -23,7 +23,7 @@ const CartTotal = () => {
           <p>Shipping Fee</p>
           <p>
             {currency}
-            {delivery_Fee}
+            {delivery_Fee}.00
           </p>
         </div>
         <hr />
@@ -31,7 +31,7 @@ const CartTotal = () => {
           <p>Total</p>
           <p>
             {currency}
-            {GetCartAmount() + delivery_Fee}
+            {GetCartAmount() + delivery_Fee}.00
           </p>
         </div>
       </div>
