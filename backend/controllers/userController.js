@@ -13,7 +13,7 @@ const loginUser = async (req, res) => {
     const { email, password } = req.body;
     const user = await userModel.findOne({ email });
     if (!user) {
-      return res.json({ success: false, message: "User already exist" });
+      return res.json({ success: false, message: "User not found" });
     }
     const isMatch = await bcrypt.compare(password, user.password);
     if (isMatch) {
@@ -74,6 +74,22 @@ const registerUser = async (req, res) => {
 };
 
 //Route for admin Login
-const adminLogin = async (req, res) => {};
+const adminLogin = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    if (
+      email === process.env.ADMIN_EMAIL &&
+      password === process.env.ADMIN_PASSWORD
+    ) {
+      const token = jwt.sign(email + password, process.env.JWT_SECRETE);
+      res.json({ success: true, token });
+    } else {
+      res.json({ success: false, message: "Invalid credentials" });
+    }
+  } catch (error) {
+    console.log(error);
+    res.json({ success: false, message: error.message });
+  }
+};
 
 export { loginUser, registerUser, adminLogin };
