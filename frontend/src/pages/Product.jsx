@@ -99,20 +99,19 @@ const Product = () => {
         </div>
         <div className="flex flex-col gap-4 border px-6 py-6 text-sm text-gray-500">
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Error unde
-            nulla eius minima nemo. Qui, dolorem. Nam assumenda adipisci
-            deserunt repudiandae iusto explicabo! Lorem, ipsum dolor sit amet
-            consectetur adipisicing elit. Eligendi esse a in quibusdam libero
-            sunt? Aperiam, assumenda! Non repudiandae maxime et, odio nemo
-            distinctio fuga, perferendis laboriosam esse qui labore.
+            An e-commerce website is an online platform that facilitates the
+            buying and selling of products or services over the internet. It
+            serves as a virtual storefront where businesses and individuals can
+            showcase their products, interact with customers, and conduct
+            transactions without the need for a physical presence. E-commerce
+            websites have gained immense popularity due to their convenience,
+            accessibility, and the global reach they offer.
           </p>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum
-            voluptatibus suscipit perferendis. Commodi odit, fugit dignissimos
-            id soluta aspernatur. lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Eligendi esse a in quibusdam libero sunt? Aperiam,
-            assumenda! Non repudiandae maxime et, odio nemo distinctio fuga,
-            perferendis laboriosam esse qui labore.
+            E-commerce websites typically display products or services along
+            with detailed descriptions, images, prices, and any available
+            variations (e.g., sizes, colors). Each product usually has its own
+            dedicated page with relevant information.
           </p>
         </div>
       </div>

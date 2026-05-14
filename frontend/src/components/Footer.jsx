@@ -8,8 +8,7 @@ const Footer = () => {
         <div>
           <img src={assets.logo} alt="Logo" className="mb-5 w-32" />
           <p className="w-full md:w-2/3 text-gray-600">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores
-            quidem hic eius iusto voluptatem omnis!
+            Forever is your premium destination for high-quality fashion. We believe in providing the best shopping experience for our customers.
           </p>
         </div>
         <div>
